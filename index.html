@@ -37,10 +37,16 @@
             <div>
               <label for="first-name">FIRST NAME</label
               ><input type="text" id="first-name" name="first-name" required />
+              <span class="error"></span>
             </div>
             <div>
               <label for="last-name">LAST NAME</label
-              ><input type="text" id="last-name" name="last-name" required />
+              ><input
+                type="text"
+                id="last-name"
+                name="last-name"
+                required
+              /><span class="error"></span>
             </div>
             <div>
               <label for="email">EMAIL</label
@@ -50,7 +56,7 @@
                 name="email"
                 autocomplete
                 required
-              />
+              /><span class="error"></span>
             </div>
             <div>
               <label for="phone-number">PHONE NUMBER</label
@@ -60,7 +66,7 @@
                 name="phone-number"
                 pattern="[0-9]{8}"
                 required
-              />
+              /><span class="error"></span>
             </div>
             <div id="password-div">
               <label for="password">PASSWORD</label
@@ -70,8 +76,7 @@
                 name="password"
                 class="invalid"
                 required
-              />
-              <div class="error"></div>
+              /><span class="error"></span>
             </div>
             <div>
               <label for="cfm-password">CONFIRM PASSWORD</label
