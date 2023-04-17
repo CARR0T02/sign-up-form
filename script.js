@@ -1,18 +1,29 @@
-const cfmPassword = document.getElementById("cfm-password");
-const password = document.getElementById("password");
+const cfmPassword = document.getElementById('cfm-password');
+const password = document.getElementById('password');
 
-cfmPassword.addEventListener("input", () => {
+function checkCfmPassword() {
+  const cfmPassword = document.getElementById('cfm-password');
+  const password = document.getElementById('password');
+  const errorMsg = cfmPassword.nextSibling;
   if (cfmPassword.value !== password.value) {
-    showError();
-    cfmPassword.classList.add("invalid");
-    password.classList.add("invalid");
+    cfmPassword.setCustomValidity('Passwords do not match.');
+    if (errorMsg.classList.contains('hidden')) {
+      errorMsg.classList.toggle('hidden');
+    }
   } else {
-    cfmPassword.classList.remove("invalid");
-    password.classList.remove("invalid");
+    cfmPassword.setCustomValidity('');
+    errorMsg.classList.toggle('hidden');
   }
-});
-
-function showError() {
-  let errorMsg = document.querySelector(".error");
-  errorMsg.textContent = "* Passwords do not match";
 }
+cfmPassword.addEventListener('input', checkCfmPassword);
+password.addEventListener('input', checkCfmPassword);
+
+const firstNameInput = document.querySelector('#first-name');
+const nameRE = /[A-Z]?[a-z]+/;
+firstNameInput.addEventListener('input', () => {});
+
+const lastNameInput = document.querySelector('#last-name');
+
+const emailInput = document.querySelector('#email');
+
+const phoneInput = document.querySelector('#phone-number');
